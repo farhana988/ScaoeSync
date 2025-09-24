@@ -1,54 +1,26 @@
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 
 function ErrorPage() {
   return (
-    <section className="error-page relative">
-      <div
-        className=" flex items-center justify-center text-gray-800  min-h-screen
-     px-10 md:px-28 lg:px-0"
+    <section
+      className="min-h-screen flex flex-col items-center justify-center
+     text-center"
+    >
+      <h1 className="text-6xl font-extrabold text-green-600 mb-4">404</h1>
+      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+        Oops! This page isn't growing here.
+      </h2>
+      <p className="text-gray-500 mb-6">
+        The page you’re trying to find has been pruned or is no longer here.
+      </p>
+
+      <Link
+        to="/"
+        className="bg-[#3BA334] hover:bg-green-700 text-white px-6 py-3 
+        rounded-md font-medium transition"
       >
-        <div
-          className="text-center py-16 md:py-20 lg:py-32 
-        bg-white bg-opacity-80 rounded-lg shadow-lg 
-        max-w-5xl w-full animate__animated animate__fadeIn animate__delay-0.1s "
-        >
-          <h1
-            className="text-2xl md:text-4xl lg:text-6xl font-extrabold mb-4 
-          animate__animated animate__zoomIn
-           animate__delay-1s text-teal-600"
-          >
-            Hmm...{" "}
-          </h1>
-
-          <p
-            className="text-xs md:text-base lg:text-xl mb-6 opacity-80 animate__animated animate__fadeIn
-           animate__delay-2s text-gray-900"
-          >
-            seems like you have lost that page in the digital void
-          </p>
-
-          <div
-            className="flex justify-center items-center gap-8 animate__animated 
-          animate__fadeIn animate__delay-3s"
-          >
-            <h2
-              className="md:text-xl lg:text-3xl font-semibold opacity-90
-             text-gray-500 flex 
-            items-center gap-4"
-            >
-              Lets get you to
-            </h2>
-            <span
-              className="text-xl md:text-2xl lg:text-4xl font-bold
-             text-teal-500 hover:text-teal-600 
-            transition-all duration-300 animate__animated animate__bounceIn 
-            animate__delay-4s"
-            >
-              <NavLink to={"/"}>Home! </NavLink>
-            </span>
-          </div>
-        </div>
-      </div>
+        Back to Home
+      </Link>
     </section>
   );
 }
