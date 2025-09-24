@@ -15,14 +15,14 @@ const BannerLeft = () => {
          -top-[39px] lg:-top-[42px]  xl:-top-[59px] 
         -translate-x-[115%]  lg:-translate-x-[75%] xl:-translate-x-[38%]"
         />
-        <h1 className="text-4xl lg:text-6xl xl:text-[84px] font-bold text-gray-800">
+        <h1 className="text-4xl lg:text-6xl xl:text-[84px] font-bold text-dGray">
           All Your Jobs <br />
           <span className="flex">
             One
             <BannerUnderline />
           </span>
         </h1>
-        <p className="mt-4 text-[#637381] max-w-sm lg:max-w-lg text-xs lg:text-base">
+        <p className="mt-4 text-lGray max-w-sm lg:max-w-lg text-xs lg:text-base">
           Built for business owners, employees, and clients streamline job
           scheduling, service tracking, and team management in one powerful app.
         </p>

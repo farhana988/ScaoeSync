@@ -10,8 +10,8 @@ const InfoCard = ({ icon, title, desc }) => {
       >
         {icon}
       </div>
-      <h3 className="mt-5 font-bold lg:text-lg text-[#212B36]">{title}</h3>
-      <p className="text-[#637381] mt-1 text-xs lg:text-sm">{desc}</p>
+      <h3 className="mt-5 font-bold lg:text-lg text-dGray">{title}</h3>
+      <p className="text-lGray mt-1 text-xs lg:text-sm">{desc}</p>
     </div>
   );
 };
