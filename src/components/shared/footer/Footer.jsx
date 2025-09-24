@@ -19,7 +19,7 @@ const Footer = () => {
        py-8 lg:py-16 xl:py-[100px]"
         >
           <FooterLogoSection />
-          <AppStoreButtons />
+          <AppStoreButtons isFooter={true} />
         </div>
 
         <SocialIcons />
