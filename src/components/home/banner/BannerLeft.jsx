@@ -10,9 +10,10 @@ const BannerLeft = () => {
           src={bannerV1}
           alt=""
           className="absolute left-1/2 transform 
-          w-[120px] xl:w-[140px] h-[135px] object-contain
-          -top-[69px]  xl:-top-[59px] 
-          -translate-x-[59%] xl:-translate-x-[38%]"
+         w-[80px]  lg:w-[110px] xl:w-[140px] 
+          h-[75px] lg:h-[105px] xl:h-[135px] object-contain
+         -top-[39px] lg:-top-[42px]  xl:-top-[59px] 
+        -translate-x-[115%]  lg:-translate-x-[75%] xl:-translate-x-[38%]"
         />
         <h1 className="text-4xl lg:text-6xl xl:text-[84px] font-bold text-gray-800">
           All Your Jobs <br />
