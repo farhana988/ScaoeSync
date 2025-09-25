@@ -6,18 +6,17 @@ import FaqAccordion from "./FaqAccordion";
 const Faq = () => {
   const { openIndex, toggleFaq } = useFaqToggle();
   return (
-    <section className="pt-[170px]">
+    <section className="pt-[170px] pb-[160px]">
       <SectionHeader
         title="Frequently Asked Questions"
         subtitle="Quick answers to help you get the most out of our app."
       />
 
-      <div className="mt-[60px] max-w-[995px] mx-auto space-y-4">
-        {faqData.map((f, i) => (
+      <div className="max-w-[995px] mx-auto space-y-4">
+        {faqData.map((faq, i) => (
           <FaqAccordion
             key={i}
-            question={f.q}
-            answer={f.a}
+            faq={faq}
             isOpen={openIndex === i}
             onClick={() => toggleFaq(i)}
           />
