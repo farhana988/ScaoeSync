@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router";
 import ReusableInput from "../components/shared/common/ReusableInput";
-import { FaChevronLeft, FaSpinner } from "react-icons/fa6";
+import { FaSpinner } from "react-icons/fa6";
 import ActionBtn from "../components/buttons/ActionBtn";
 import BackBtn from "../components/buttons/BackBtn";
 import { resetPassword } from "../utils/resetpass";
@@ -14,6 +14,8 @@ const ResetPassword = () => {
     formState: { errors },
     watch,
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,7 +40,7 @@ const ResetPassword = () => {
   return (
     <div className="flex items-center justify-center bg-white pt-60">
       <div className="w-full max-w-[480px]">
-      <BackBtn/>
+        <BackBtn />
         <h1 className="text-[32px] font-bold text-dGray mb-4">
           Enter your new password
         </h1>
@@ -54,6 +56,10 @@ const ResetPassword = () => {
             name="password"
             required={true}
             error={errors.password}
+             showToggle={true}
+            showValue={showPassword}
+            onToggle={() => setShowPassword(!showPassword)}
+            watchValue={watch("password", "")}
           />
 
           <ReusableInput
@@ -65,7 +71,11 @@ const ResetPassword = () => {
             validate={(val) =>
               val === watch("password") || "Passwords do not match"
             }
+            showToggle={true}
+            showValue={showConfirm}
+            onToggle={() => setShowConfirm(!showConfirm)}
             error={errors.password_confirmation}
+            watchValue={watch("password_confirmation", "")}
           />
 
           <ActionBtn type="submit" disabled={isSubmitting}>
