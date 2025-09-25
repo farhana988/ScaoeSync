@@ -1,8 +1,10 @@
 import { Outlet } from "react-router";
 import Footer from "../components/shared/footer/Footer";
 import Navbar from "../components/shared/navbar/Navbar";
+import useIsHomepage from "../hooks/useIsHomepage";
 
 const MainLayout = () => {
+  const isHomepage = useIsHomepage();
   return (
     <>
       <div className="max-w-[1200px] mx-auto">
@@ -12,7 +14,7 @@ const MainLayout = () => {
           <Outlet />
         </div>
       </div>
-      <Footer />
+      {isHomepage && <Footer />}
     </>
   );
 };

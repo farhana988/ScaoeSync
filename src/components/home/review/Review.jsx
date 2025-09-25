@@ -1,6 +1,6 @@
-import SectionHeader from "../../shared/SectionHeader";
 import ReviewCard from "../../cards/ReviewCard";
 import { reviewData } from "../../../data/reviewData";
+import SectionHeader from "../../shared/common/SectionHeader";
 
 const Review = () => {
   return (

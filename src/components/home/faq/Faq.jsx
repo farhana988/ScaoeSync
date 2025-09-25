@@ -1,7 +1,8 @@
-import SectionHeader from "../../shared/SectionHeader";
+
 import useFaqToggle from "../../../hooks/useFaqToggle";
 import { faqData } from "../../../data/faqData";
 import FaqAccordion from "./FaqAccordion";
+import SectionHeader from "../../shared/common/SectionHeader";
 
 const Faq = () => {
   const { openIndex, toggleFaq } = useFaqToggle();
