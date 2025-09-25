@@ -10,7 +10,7 @@ const SuccessCard = ({ title, message, buttonText, buttonLink }) => {
         alt="Celebration"
         className="w-[332px] h-[328px] mb-9"
       />
-      <div className="max-w-[480px] mx-auto">
+      <div className="max-w-[513px] mx-auto">
         <div className="mb-20">
           <h1 className="text-[32px] font-bold text-dGray  text-center">
             {title || "Success!"}

@@ -1,5 +1,6 @@
-import React from 'react';
-import ReusableInput from '../shared/common/ReusableInput';
+import React from "react";
+import ReusableInput from "../shared/common/ReusableInput";
+import { Link } from "react-router";
 
 const FormFields = ({
   isRegister,
@@ -10,10 +11,10 @@ const FormFields = ({
   setShowPassword,
   showConfirm,
   setShowConfirm,
-})=> {
-    return (
-          <>
-        {isRegister && (
+}) => {
+  return (
+    <>
+      {isRegister && (
         <div className="grid grid-cols-2 gap-4">
           <ReusableInput
             label="First name"
@@ -110,17 +111,17 @@ const FormFields = ({
             />
             Remember me
           </label>
-          <a
-            href="/forgot-password"
+          <Link
+            to={"/forgot-password"}
             className="text-[#49AE44] hover:underline hover:underline-offset-4 
             font-semibold"
           >
             Forgot password?
-          </a>
+          </Link>
         </div>
       )}
     </>
-    );
+  );
 };
 
 export default FormFields;

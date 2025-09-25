@@ -6,6 +6,10 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import VerifyOtp from "../pages/VerifyOtp";
 import AccountCreated from "../pages/AccountCreated";
+import ForgotPasswordPage from "../pages/ForgotPasswordPage";
+import VerifyPasswordOtp from "../pages/VerifyPasswordOtp";
+import ResetPassword from "../pages/ResetPassword";
+import ResetPasswordConfirm from "../pages/ResetPasswordConfirm";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +36,22 @@ const router = createBrowserRouter([
       {
         path: "/account-created",
         element: <AccountCreated />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPasswordPage />,
+      },
+      {
+        path: "/verify-password-otp",
+        element: <VerifyPasswordOtp />,
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
+      {
+        path: "/reset-password-confirm",
+        element: <ResetPasswordConfirm />,
       },
     ],
   },

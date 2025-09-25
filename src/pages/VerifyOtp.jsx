@@ -7,6 +7,7 @@ import OTPInput from "../components/verify-otp/OTPInput";
 import useOtpState from "../hooks/useOtpState";
 import useVerifyOtp from "../hooks/useVerifyOtp";
 import useResendOtp from "../hooks/useResendOtp";
+import BackBtn from "../components/buttons/BackBtn";
 
 const VerifyOtp = () => {
   const { registrationEmail } = useRegistrationContext();
@@ -28,16 +29,9 @@ const VerifyOtp = () => {
 
   return (
     <div className="flex items-center justify-center bg-white pt-60">
-      <div className="w-full max-w-md p-8">
+      <div className="w-full max-w-[480px]">
         {/* Back */}
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center text-[#49AE44] text-sm font-medium mb-6 gap-2
-          text-[13px]"
-        >
-          <FaChevronLeft />
-          Back
-        </button>
+        <BackBtn />
 
         <h1 className="text-[32px] font-bold text-dGray mb-4">
           Please check your email!

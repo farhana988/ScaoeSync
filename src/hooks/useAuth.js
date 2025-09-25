@@ -52,8 +52,7 @@ const { setRegistrationEmail } = useRegistrationContext();
         body: formData,
       });
 
-      const result = await response.json();
-
+      const result = await response.json(); 
       if (response.ok) {
         console.log("✅ Success:", result);
         if (isRegister) {

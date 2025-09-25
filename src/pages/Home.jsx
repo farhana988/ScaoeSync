@@ -9,9 +9,9 @@ const Home = () => {
     <>
       <Banner />
       <HeroSection />
-      <Feature/>
-      <Review/>
-      <Faq/>
+      <Feature />
+      <Review />
+      <Faq />
     </>
   );
 };
