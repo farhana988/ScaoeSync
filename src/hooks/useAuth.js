@@ -1,5 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import useRegistrationContext from "./useRegistrationContext";
+
+
 
 const useAuth = (type) => {
   const {
@@ -9,6 +13,9 @@ const useAuth = (type) => {
     setError,
     formState: { errors },
   } = useForm();
+
+const { setRegistrationEmail } = useRegistrationContext(); 
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -49,6 +56,12 @@ const useAuth = (type) => {
 
       if (response.ok) {
         console.log("✅ Success:", result);
+        if (isRegister) {
+          setRegistrationEmail(data.email);
+          navigate("/verify-otp");
+        } else {
+          console.error("No email found in data");
+        }
       } else {
         handleServerErrors(result);
       }

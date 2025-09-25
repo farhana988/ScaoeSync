@@ -13,7 +13,8 @@ const ActionBtn =  ({
       onClick={onClick}
       disabled={disabled}
       className={`w-full bg-[#49AE44] text-white py-[11px] rounded-md font-bold
-        hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+        hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed 
+      flex items-center justify-center ${className}`}
     >
       {children}
     </button>
