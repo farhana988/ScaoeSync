@@ -4,7 +4,7 @@ import { reviewData } from "../../../data/reviewData";
 
 const Review = () => {
   return (
-    <section className="pt-[170px]">
+    <section className="pt-20 lg:pt-32 xl:pt-[170px]">
       <SectionHeader
         title="What Our Users Are Saying"
         subtitle="Real stories from clients, employees, and business owners who use our app every day."

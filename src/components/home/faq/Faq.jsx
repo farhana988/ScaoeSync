@@ -6,7 +6,7 @@ import FaqAccordion from "./FaqAccordion";
 const Faq = () => {
   const { openIndex, toggleFaq } = useFaqToggle();
   return (
-    <section className="pt-[170px] pb-[160px]">
+    <section className="pt-20 lg:pt-32 xl:pt-[170px] pb-[160px]">
       <SectionHeader
         title="Frequently Asked Questions"
         subtitle="Quick answers to help you get the most out of our app."

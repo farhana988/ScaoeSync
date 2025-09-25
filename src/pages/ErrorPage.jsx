@@ -16,7 +16,7 @@ function ErrorPage() {
 
       <Link
         to="/"
-        className="bg-[#3BA334] hover:bg-green-700 text-white px-6 py-3 
+        className="bg-green hover:bg-green-700 text-white px-6 py-3 
         rounded-md font-medium transition"
       >
         Back to Home

@@ -6,7 +6,7 @@ const InfoCard = ({ icon, title, desc }) => {
     >
       <div
         className="bg-[#ECFCEB] w-[43px] h-[43px] rounded-[8px] flex items-center 
-      justify-center text-lg lg:text-2xl text-[#3BA334]"
+      justify-center text-lg lg:text-2xl text-green"
       >
         {icon}
       </div>
