@@ -12,7 +12,7 @@ const AppStoreButtons = ({ isFooter = false }) => {
               href={href}
               key={index}
               className="flex items-center gap-[14px] border border-[#347C30] rounded-[7.28px]
-               px-2 lg:px-4 py-1.5 lg:py-[10px] hover:bg-green-700"
+               px-2 lg:px-4 py-1.5 lg:py-[10px]"
               target="_blank"
               rel="noopener noreferrer"
             >

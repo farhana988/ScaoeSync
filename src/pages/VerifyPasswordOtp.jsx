@@ -4,11 +4,13 @@ import OTPInput from "../components/verify-otp/OTPInput";
 import ActionBtn from "../components/buttons/ActionBtn";
 import useOtpState from "../hooks/useOtpState";
 import useVerifyOtp from "../hooks/useVerifyOtp";
-import { FaChevronLeft, FaSpinner } from "react-icons/fa6";
+import { FaSpinner } from "react-icons/fa6";
 import BackBtn from "../components/buttons/BackBtn";
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const VerifyPasswordOtp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [apiError, setApiError] = useState("");
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -27,17 +29,16 @@ const VerifyPasswordOtp = () => {
   const onSubmit = async () => {
     try {
       setIsSubmitting(true);
+      setApiError("");
 
       const formData = new FormData();
       formData.append("email", email);
       formData.append("otp", otp.join(""));
 
-      const response = await fetch (`${BASE_URL}/forgot-verify-otp`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch(`${BASE_URL}/forgot-verify-otp`, {
+        method: "POST",
+        body: formData,
+      });
 
       const result = await response.json();
 
@@ -46,11 +47,11 @@ const VerifyPasswordOtp = () => {
           state: { email, token: result.data.token },
         });
       } else {
-        console.log("Invalid OTP");
+        setApiError(result.message || "Invalid OTP");
       }
     } catch (error) {
       console.error(error);
-      alert("Error occurred while verifying OTP");
+      setApiError("Error occurred while verifying OTP");
     } finally {
       setIsSubmitting(false);
     }
@@ -78,6 +79,9 @@ const VerifyPasswordOtp = () => {
           onKeyDown={handleKeyDown}
           inputRefs={inputRefs}
         />
+        {apiError && (
+          <span className="text-red-500 text-sm mt-1 block mb-6">{apiError}</span>
+        )}
 
         <ActionBtn onClick={onSubmit} disabled={isSubmitting || loading}>
           {isSubmitting || loading ? (

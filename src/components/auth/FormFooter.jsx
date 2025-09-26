@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import google from "../../assets/images/google.png";
 
 const FormFooter = ({ isRegister }) => {
@@ -21,16 +22,16 @@ const FormFooter = ({ isRegister }) => {
         {isRegister ? (
           <>
             Already have an account?{" "}
-            <a href="/login" className="text-[#49AE44] font-semibold">
+            <Link to="/login" className="text-[#49AE44] font-semibold">
               Login
-            </a>
+            </Link>
           </>
         ) : (
           <>
             Don’t have an account?{" "}
-            <a href="/register" className="text-[#49AE44] font-semibold">
+            <Link to={"/register"} className="text-[#49AE44] font-semibold">
               Get started
-            </a>
+            </Link>
           </>
         )}
       </p>

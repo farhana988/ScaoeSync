@@ -15,21 +15,25 @@ const ForgotPasswordPage = () => {
     formState: { errors },
   } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [apiError, setApiError] = useState("");
+
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
       setIsSubmitting(true);
+      setApiError("");
       const { success, message } = await requestPasswordReset(data.email);
       if (success) {
         console.log(message, success);
         navigate("/verify-password-otp", { state: { email: data.email } });
       } else {
-        alert(message);
+        console.log(message);
+        setApiError(message || "An error occurred");
       }
     } catch (error) {
       console.error("Error occurred:", error);
-      alert("An error occurred while sending OTP");
+      setApiError("An error occurred while sending OTP");
     } finally {
       setIsSubmitting(false);
     }
@@ -58,8 +62,16 @@ const ForgotPasswordPage = () => {
           watchValue={watch("email", "")}
         />
 
+        {apiError && (
+          <span className="text-red-500 text-sm mt-1 block">{apiError}</span>
+        )}
+
         <ActionBtn type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <FaSpinner className="animate-spin" /> : "Reset Password"}
+          {isSubmitting ? (
+            <FaSpinner className="animate-spin" />
+          ) : (
+            "Reset Password"
+          )}
         </ActionBtn>
       </form>
     </div>
