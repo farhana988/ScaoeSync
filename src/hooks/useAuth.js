@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import useRegistrationContext from "./useRegistrationContext";
 
-
-
 const useAuth = (type) => {
   const {
     register,
@@ -14,7 +12,7 @@ const useAuth = (type) => {
     formState: { errors },
   } = useForm();
 
-const { setRegistrationEmail } = useRegistrationContext(); 
+  const { setRegistrationEmail } = useRegistrationContext();
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -52,14 +50,16 @@ const { setRegistrationEmail } = useRegistrationContext();
         body: formData,
       });
 
-      const result = await response.json(); 
+      const result = await response.json();
       if (response.ok) {
         console.log("✅ Success:", result);
         if (isRegister) {
           setRegistrationEmail(data.email);
           navigate("/verify-otp");
         } else {
-          console.error("No email found in data");
+          localStorage.setItem("auth_token", result.token);
+          localStorage.setItem("registration_email", data.email);
+          navigate("/");
         }
       } else {
         handleServerErrors(result);
