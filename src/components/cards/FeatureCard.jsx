@@ -13,16 +13,19 @@ const FeatureCard = ({ feature, reverse }) => {
         <span
           className="inline-block text-xs lg:text-sm font-semibold text-green 
           px-5 py-1 lg:py-[6px] rounded-[60px]
-        border border-[#3BA334]
-
-"
+        border border-[#3BA334]"
         >
           {label}
         </span>
-        <h3 className="mt-[18px] text-xl lg:text-2xl font-bold text-[#0F172A] ">
+        <h3
+          className="mt-[18px] text-xl lg:text-2xl font-bold text-[#0F172A] max-w-[448px] 
+        "
+        >
           {title}
         </h3>
-        <p className="text-lGray mt-4 text-sm lg:text-lg">{des}</p>
+        <p className="text-lGray mt-4 text-sm lg:text-lg max-w-[498px]">
+          {des}
+        </p>
 
         <ul className="space-y-3 lg:space-y-5 mt-5 lg:mt-8 text-[#0F172A] text-sm lg:text-lg">
           {points.map((p, i) => (

@@ -79,7 +79,7 @@ const ResetPassword = () => {
           />
 
           <ActionBtn type="submit" disabled={isSubmitting}>
-            {isSubmitting ? <FaSpinner className="animate-spin" /> : "Verify"}
+            {isSubmitting ? <FaSpinner className="animate-spin" /> : "Update Password"}
           </ActionBtn>
         </form>
       </div>

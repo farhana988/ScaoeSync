@@ -74,6 +74,16 @@ const useAuth = (type) => {
   };
 
   const handleServerErrors = (result) => {
+    if (result.message === "Unauthorized" || result.status === 401) {
+      setError("email", {
+        type: "server",
+        message: "Invalid email or password.",
+      });
+      setError("password", {
+        type: "server",
+        message: "Invalid email or password.",
+      });
+    }
     if (result.errors) {
       for (const field in result.errors) {
         setError(field, {

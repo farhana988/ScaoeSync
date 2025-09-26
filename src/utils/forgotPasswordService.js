@@ -11,6 +11,7 @@ export const requestPasswordReset = async (email) => {
     });
 
     const result = await response.json();
+    console.log(result);
     if (result.status === 201) {
       return { success: true, message: result.message };
     } else {

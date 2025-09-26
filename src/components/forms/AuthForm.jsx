@@ -33,6 +33,7 @@ const AuthForm = ({ type = "login" }) => {
           showConfirm={showConfirm}
           setShowConfirm={setShowConfirm}
         />
+      
         <ActionBtn type="submit">
           {isRegister ? "Create Account" : "Login"}
         </ActionBtn>

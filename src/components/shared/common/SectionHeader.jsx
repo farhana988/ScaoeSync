@@ -5,7 +5,7 @@ const SectionHeader = ({ title, subtitle }) => {
         {title}
       </h2>
       <p
-        className="text-lGray mt-[6px] text-xs lg:text-base  
+        className="text-lGray mt-[6px] text-xs lg:text-sm  
       max-w-xs lg:max-w-sm xl:max-w-[500px] mx-auto"
       >
         {subtitle}

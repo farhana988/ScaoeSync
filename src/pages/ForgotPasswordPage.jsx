@@ -59,7 +59,7 @@ const ForgotPasswordPage = () => {
         />
 
         <ActionBtn type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <FaSpinner className="animate-spin" /> : "Verify"}
+          {isSubmitting ? <FaSpinner className="animate-spin" /> : "Reset Password"}
         </ActionBtn>
       </form>
     </div>

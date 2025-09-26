@@ -47,6 +47,7 @@ const FormFields = ({
 
       <ReusableInput
         label="Password"
+        type="password"
         register={register}
         name="password"
         required={true}

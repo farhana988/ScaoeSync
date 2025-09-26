@@ -17,7 +17,7 @@ const FeatureHeader = () => {
         </span>
       </h2>
       <p
-        className="text-lGray mt-[6px] text-xs lg:text-base  
+        className="text-lGray mt-[6px] text-xs lg:text-sm  
       max-w-md lg:max-w-[562px] mx-auto"
       >
         Whether you're booking services, managing tasks, or running operations,

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import useRegistrationContext from "../hooks/useRegistrationContext";
-import { FaChevronLeft, FaSpinner } from "react-icons/fa6";
+import { FaSpinner } from "react-icons/fa6";
 import ActionBtn from "../components/buttons/ActionBtn";
 import OTPInput from "../components/verify-otp/OTPInput";
 import useOtpState from "../hooks/useOtpState";
