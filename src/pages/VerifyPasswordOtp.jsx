@@ -80,9 +80,14 @@ const VerifyPasswordOtp = () => {
           inputRefs={inputRefs}
         />
         {apiError && (
-          <span className="text-red-500 text-sm mt-1 block mb-6">{apiError}</span>
+          <span className="text-red-500 text-sm mt-1 block mb-6">
+            {apiError}
+          </span>
         )}
 
+        {message && (
+          <p className="text-red-500 text-sm mt-1 block mb-6">{message}</p>
+        )}
         <ActionBtn onClick={onSubmit} disabled={isSubmitting || loading}>
           {isSubmitting || loading ? (
             <FaSpinner className="animate-spin" />
@@ -90,10 +95,6 @@ const VerifyPasswordOtp = () => {
             "Verify"
           )}
         </ActionBtn>
-
-        {message && (
-          <p className="mt-6 text-center text-sm text-lGray">{message}</p>
-        )}
       </div>
     </div>
   );

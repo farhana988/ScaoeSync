@@ -50,6 +50,14 @@ const VerifyOtp = () => {
           inputRefs={inputRefs}
         />
 
+        {message && (
+          <p className="text-red-500 text-sm mt-1 block mb-6">{message}</p>
+        )}
+        {resendMessage && (
+          <p className="text-red-500 text-sm mt-1 block mb-6">
+            {resendMessage}
+          </p>
+        )}
         <ActionBtn onClick={handleVerify} disabled={loading}>
           {loading ? <FaSpinner className="animate-spin" /> : "Verify"}
         </ActionBtn>
@@ -63,13 +71,6 @@ const VerifyOtp = () => {
             Resend code
           </button>
         </p>
-
-        {message && (
-          <p className="mt-6 text-center text-sm text-lGray">{message}</p>
-        )}
-        {resendMessage && (
-          <p className="mt-6 text-center text-sm text-lGray">{resendMessage}</p>
-        )}
       </div>
     </div>
   );

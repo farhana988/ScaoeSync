@@ -43,7 +43,8 @@ const ProfileDropdown = ({ registrationEmail, onLogout }) => {
       {showEmail && (
         <div
           ref={dropdownRef}
-          className="absolute top-12 right-0 bg-white shadow-lg rounded-lg p-3 w-48"
+          className="absolute top-20 right-0 bg-white shadow-lg rounded-lg p-3
+           w-48"
         >
           <p className="text-sm text-dGray">Email: {registrationEmail}</p>
         </div>

@@ -4,7 +4,7 @@ import FeatureHeader from "./FeatureHeader";
 
 const Feature = () => {
   return (
-    <section className="pt-20 lg:pt-32 xl:pt-[170px]">
+    <section className="pt-20 lg:pt-32 xl:pt-[170px] overflow-x-hidden">
       <FeatureHeader />
       <div className="container mx-auto grid gap-10 xl:gap-0">
         {features.map((feature, index) => (
