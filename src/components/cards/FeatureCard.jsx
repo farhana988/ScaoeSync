@@ -1,15 +1,31 @@
+import { motion as Motion } from "framer-motion";
 const borderColors = [
   "rgba(59, 163, 52, 1)",
   "rgba(59, 163, 52, 0.7)",
   "rgba(59, 163, 52, 0.4)",
 ];
-
 const FeatureCard = ({ feature, reverse }) => {
   const { label, title, points, img, des } = feature;
+  const textAnim = {
+    initial: { x: reverse ? -100 : 100, opacity: 0 },
+    whileInView: { x: 0, opacity: 1 },
+    transition: { duration: 0.8, ease: "easeOut" },
+    viewport: { once: false, amount: 0.2 },
+  };
+
+  const imageAnim = {
+    initial: { x: reverse ? 100 : -100, opacity: 0 },
+    whileInView: { x: 0, opacity: 1 },
+    transition: { duration: 0.8, delay: 0.2, ease: "easeOut" },
+    viewport: { once: false, amount: 0.2 },
+  };
   return (
     <div className="grid md:grid-cols-2 items-center gap-10">
       {/* Text */}
-      <div className={`order-2 ${reverse ? "md:order-1" : "md:order-2"}`}>
+      <Motion.div
+        {...textAnim}
+        className={`order-2 ${reverse ? "md:order-1" : "md:order-2"}`}
+      >
         <span
           className="inline-block text-xs lg:text-sm font-semibold text-green 
           px-5 py-1 lg:py-[6px] rounded-[60px]
@@ -39,10 +55,11 @@ const FeatureCard = ({ feature, reverse }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </Motion.div>
 
       {/* Image */}
-      <div
+      <Motion.div
+        {...imageAnim}
         className={`order-1 ${
           reverse ? "md:order-2" : "md:order-1"
         } flex justify-center relative`}
@@ -59,7 +76,7 @@ const FeatureCard = ({ feature, reverse }) => {
           className="absolute bottom-0 left-0 w-full h-[133px] bg-gradient-to-t
          from-white via-white/50 to-transparent"
         />
-      </div>
+      </Motion.div>
     </div>
   );
 };

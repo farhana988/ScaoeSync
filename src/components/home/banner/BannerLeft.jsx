@@ -1,11 +1,17 @@
 import AppStoreButtons from "../../buttons/AppStoreButtons";
 import bannerV1 from "../../../assets/images/banner-v-1.png";
 import BannerUnderline from "./BannerUnderline";
-
+import { motion as Motion } from "framer-motion";
 const BannerLeft = () => {
   return (
     <div>
-      <div className="mb-10 xl:mb-16 relative">
+      <Motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.2 }} 
+        className="mb-10 xl:mb-16 relative"
+      >
         <img
           src={bannerV1}
           alt=""
@@ -26,8 +32,15 @@ const BannerLeft = () => {
           Built for business owners, employees, and clients streamline job
           scheduling, service tracking, and team management in one powerful app.
         </p>
-      </div>
-      <AppStoreButtons isFooter={false} />
+      </Motion.div>
+       <Motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <AppStoreButtons isFooter={false} />
+      </Motion.div>
     </div>
   );
 };

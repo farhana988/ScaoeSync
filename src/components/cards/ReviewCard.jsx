@@ -1,9 +1,13 @@
 import quote from "../../assets/images/review/quote.png";
-
+import { motion as Motion } from "framer-motion";
 const ReviewCard = ({ testimonial }) => {
   const { name, role, text, image } = testimonial;
   return (
-    <div
+    <Motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.2 }}
       className="bg-white rounded-[22px] p-[28px] text-left hover:shadow-md transition"
       style={{ boxShadow: "0px 16px 32px -4px rgba(146, 42, 145, 0.1)" }}
     >
@@ -26,7 +30,7 @@ const ReviewCard = ({ testimonial }) => {
         />
         <p className="text-lGray relative z-10">{text}</p>
       </div>
-    </div>
+    </Motion.div>
   );
 };
 
